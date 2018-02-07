@@ -43,7 +43,9 @@ import { PeopleComponent } from './people';
     HomeComponent,
     PeopleComponent
   ],
-  providers: [ ],
+  providers: [
+    HttpClient,
+  ],
   bootstrap: [
     PeopleAppComponent
   ]
