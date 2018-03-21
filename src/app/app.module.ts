@@ -17,7 +17,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 
-//import { PeopleAppComponent } from './app.component';
+// import { PeopleAppComponent } from './app.component';
 
 @NgModule({
   imports: [
@@ -34,11 +34,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatListModule
   ],
   declarations: [
-    //PeopleAppComponent
+    // PeopleAppComponent
   ],
   providers: [ ],
   bootstrap: [
-    //PeopleAppComponent
+    // PeopleAppComponent
   ]
 })
 export class AppModule { }
