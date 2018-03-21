@@ -20,8 +20,6 @@ import { APP_ROUTES } from './app.routes';
 
 import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home';
-import { PersonComponent } from './person';
-import { PeopleComponent } from './people';
 
 @NgModule({
   imports: [
@@ -41,9 +39,7 @@ import { PeopleComponent } from './people';
   ],
   declarations: [
     PeopleAppComponent,
-    HomeComponent,
-    PersonComponent,
-    PeopleComponent
+    HomeComponent
   ],
   providers: [ ],
   bootstrap: [
