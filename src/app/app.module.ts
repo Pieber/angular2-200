@@ -32,8 +32,9 @@ import { PeopleService } from './shared/people-service';
 import { NaPipe } from './shared/na-pipe';
 import { SearchComponent } from './shared/search/search.component';
 import { SfeirBadgeDirective } from './shared/badge';
-import { reducers, metaReducers } from './store/reducers';
-import { StoreModule } from '@ngrx/store';
+import { NgxsModule, NgxsLoggerPluginModule, NgxsReduxDevtoolsPluginModule } from 'ngxs';
+import { environment } from 'environments/environment';
+import { AppState } from './app.state';
 
 @NgModule({
   imports: [
@@ -52,7 +53,14 @@ import { StoreModule } from '@ngrx/store';
     HttpClientModule,
     APP_ROUTES,
     ReactiveFormsModule,
-    StoreModule.forRoot(reducers, {metaReducers}),
+    NgxsModule.forRoot([ AppState ]),
+    NgxsLoggerPluginModule.forRoot({
+      logger: console,
+      collapsed: true
+    }),
+    NgxsReduxDevtoolsPluginModule.forRoot({
+      disabled: environment.production
+    })
   ],
   declarations: [
     PeopleAppComponent,
