@@ -20,7 +20,6 @@ import { APP_ROUTES } from './app.routes';
 
 import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home';
-import { PersonComponent } from './person';
 import { PeopleComponent } from './people';
 import { CardComponent } from './shared/card';
 
@@ -43,7 +42,6 @@ import { CardComponent } from './shared/card';
   declarations: [
     PeopleAppComponent,
     HomeComponent,
-    PersonComponent,
     PeopleComponent,
     CardComponent
   ],
