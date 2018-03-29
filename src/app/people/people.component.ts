@@ -4,6 +4,9 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 import { PeopleService } from '../shared/people-service';
 import 'rxjs/add/operator/mergeMap';
+import { Store, Select } from 'ngxs';
+import { SetPeople, AppState, FilterPeople, LoadPeople } from '../app.state';
+import { Observable } from 'rxjs/Observable';
 
 
 @Component({
@@ -15,18 +18,22 @@ export class PeopleComponent implements OnInit {
 
     private addDialog: MatDialogRef<AddDialogComponent>;
     people;
+    search$: Observable<string>;
+
     dialogStatus = 'inactive';
     view = 'card';
 
-    constructor(private _http: HttpClient, public dialog: MatDialog, private _peopleService: PeopleService) {}
+    constructor(private store: Store, public dialog: MatDialog, private _peopleService: PeopleService) {}
 
 
     /**
      * OnInit implementation
      */
     ngOnInit() {
-        this._peopleService.fetch()
-            .subscribe( (people) => this.people = people);
+      this.store.select(AppState.filteredPeople)
+      .subscribe(p => this.people = p);
+      this.search$ = this.store.select(AppState.search);
+      this.store.dispatch(new LoadPeople());
     }
 
     delete(person: any) {
@@ -66,6 +73,10 @@ export class PeopleComponent implements OnInit {
     switchView() {
         this.view = (this.view === 'card') ? 'list' : 'card';
     }
+
+    onSearch(search) {
+      this.store.dispatch(new FilterPeople(search));
+  }
 }
 
 
