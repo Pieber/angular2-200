@@ -16,7 +16,7 @@ import {
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { PeopleAppComponent } from './app.component';
-import { HomeComponent } from './home';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   imports: [
@@ -38,7 +38,7 @@ import { HomeComponent } from './home';
   ],
   providers: [ ],
   bootstrap: [
-    HomeComponent
+    PeopleAppComponent // Auparavant HomeComponent
   ]
 })
 export class AppModule { }
