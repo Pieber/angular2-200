@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PEOPLE} from '../_static/people';
 
 @Component({
     selector: 'sfeir-home',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['home.component.css']
 })
 export class HomeComponent implements OnInit {
-    name:string;
+    private person: any;
     
     constructor() {
-        this.name = 'Angular 2';
+        this.person = PEOPLE[0];
     }
 
     /**
