@@ -20,6 +20,7 @@ import { APP_ROUTES } from './app.routes';
 
 import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home';
+import { PeopleComponent } from './people/people.component';
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import { HomeComponent } from './home';
   ],
   declarations: [
     PeopleAppComponent,
-    HomeComponent
+    HomeComponent,
+    PeopleComponent
   ],
   providers: [
     HttpClient,
