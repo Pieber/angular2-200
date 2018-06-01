@@ -2,6 +2,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { APP_ROUTES } from './app.routes';
+import { PeopleAppComponent } from './app.component';
+import { HomeComponent } from './home';
+
 // MATERIAL DESIGN MODULES
 import {
   MatToolbarModule,
@@ -14,12 +19,7 @@ import {
   MatIconModule,
   MatListModule
 } from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-// import { APP_ROUTES } from './app.routes';
-
-import { PeopleAppComponent } from './app.component';
-import { HomeComponent } from './home';
 
 @NgModule({
   imports: [
@@ -35,6 +35,7 @@ import { HomeComponent } from './home';
     MatIconModule,
     MatListModule,
     HttpClientModule,
+    APP_ROUTES
   ],
   declarations: [
     PeopleAppComponent,
