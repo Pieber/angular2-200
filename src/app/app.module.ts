@@ -2,6 +2,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import { PeopleAppComponent } from './app.component';
+import { HomeComponent } from './home';
+import { PeopleComponent } from './people';
+import { CardComponent } from './shared/card';
+
+import { APP_ROUTES } from './app.routes';
+
 // MATERIAL DESIGN MODULES
 import {
   MatToolbarModule,
@@ -14,14 +23,6 @@ import {
   MatIconModule,
   MatListModule
 } from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
-import { APP_ROUTES } from './app.routes';
-
-import { PeopleAppComponent } from './app.component';
-import { HomeComponent } from './home';
-import { PeopleComponent } from './people';
-import { CardComponent } from './shared/card';
 
 @NgModule({
   imports: [

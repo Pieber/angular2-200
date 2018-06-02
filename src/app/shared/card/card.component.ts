@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'sfeir-card',
@@ -8,9 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardComponent implements OnInit {
     
     @Input() person: any;
+    @Output('personDelete') delete$: EventEmitter<any>;
 
     constructor() {
         this.person = {};
+        this.delete$ = new EventEmitter(); //Hyper important. Don't forget!!!
     }
 
 
@@ -18,5 +20,13 @@ export class CardComponent implements OnInit {
      * OnInit implementation
      */
     ngOnInit() {
+    }
+
+    /**
+     * Function to emit event to delete current person
+     * @param person
+     */
+    delete(person:any) {
+        this.delete$.emit(person);
     }
 }
